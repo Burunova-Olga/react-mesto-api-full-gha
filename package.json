@@ -10,6 +10,16 @@
     "eslint-plugin-import": "^2.29.0",
     "nodemon": "^3.0.1"
   },
+  "scripts": {
+    "startfront": "react-scripts start",
+    "build": "react-scripts build",
+    "testfront": "react-scripts test",
+    "eject": "react-scripts eject", 
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint .",
+    "start": "node backend/app.js",
+    "dev": "nodemon backend/app.js"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
