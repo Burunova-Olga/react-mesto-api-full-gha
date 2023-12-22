@@ -1,0 +1,17 @@
+.welcome
+{ 
+  width: 358px;
+  height: min-content;
+
+  margin: 60px auto 112px;
+  padding: 0;
+}
+
+@media screen and (max-width: 425px)
+{
+  .welcome
+  {
+    width: 260px;    
+    margin: 40px auto;
+  }
+}

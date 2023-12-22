@@ -1,0 +1,38 @@
+.close__button
+{
+  padding: 0;
+  margin: 0;
+
+  width: 32px;
+  height: 32px;
+
+  position: absolute;
+  right: 0;
+  transform: translate(calc(32px + 8px), calc(-32px - 8px));
+  border: 0;
+
+  background-image: url(../../../images/close_btn.svg);
+  background-size: contain;
+  background-color: rgba(0, 0, 0, 0);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 530px)
+{
+  .close__button
+  {
+    transform: translate(0, calc(-32px - 8px));
+  }
+}
+
+@media screen and (max-width: 460px)
+{
+  .close__button
+  {
+    transform: translate(0, calc(-20px - 16px));
+
+    width: 20px;
+    height: 20px;
+  }
+}

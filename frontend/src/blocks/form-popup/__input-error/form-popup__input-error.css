@@ -1,0 +1,25 @@
+.form-popup__input-error
+{
+  margin: 5px 36px 0;
+  padding: 0;
+
+  color: #F00;
+
+  display: block;
+  min-height: 30px;
+  width: calc(430px - 2*36px);
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+
+  opacity: 0;
+}
+
+@media screen and (max-width: 460px)
+{
+  .form-popup__input-error
+  {
+    width: calc(282px - 2*22px);
+  }
+}

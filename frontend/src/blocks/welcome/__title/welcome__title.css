@@ -1,0 +1,20 @@
+.welcome__title
+{
+  color: #ffffff;
+  margin: 0 auto;
+  padding: 0;
+
+  text-align: center;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29.05px;
+}
+
+@media screen and (max-width: 425px)
+{
+  .welcome__title
+  {
+    font-size: 20px;
+    line-height: 24.2px;
+  }
+}
