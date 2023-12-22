@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const { errors, celebrate, Joi } = require('celebrate');
 const auth = require('./middlewares/auth');
+const checkCORS = require('./middlewares/check-cors');
 const { createUser, login } = require('./controllers/users');
 const NotFoundError = require('./errors/not-found-error');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
@@ -17,6 +18,7 @@ mongoose.connect(DB_URL)
   });
 
 app.use(requestLogger);
+app.use(checkCORS);
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
