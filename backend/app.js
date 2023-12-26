@@ -1,3 +1,7 @@
+
+require('dotenv').config();
+
+const { NODE_ENV, JWT_SECRET } = process.env; 
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
