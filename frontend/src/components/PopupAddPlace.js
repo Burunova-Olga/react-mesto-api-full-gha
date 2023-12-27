@@ -9,8 +9,8 @@ function PopupAddPlace({ isOpen, onClose, onAddPlace })
   React.useEffect(() =>
   {
     setFormValues({...formValues, 
-      ['link']: '',
-      ['description']: ''});
+      'link': '',
+      'description': ''});
   }, [isOpen]);
 
   function handleSubmit(e)

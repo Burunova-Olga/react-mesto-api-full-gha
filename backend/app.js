@@ -1,7 +1,3 @@
-
-require('dotenv').config();
-
-const { NODE_ENV, JWT_SECRET } = process.env; 
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -26,6 +22,12 @@ app.use(checkCORS);
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 const regex = /(http|https):\/\/(w{3}.)?[a-zA-Z0-9\-_]+\.[a-zA-Z0-9-._~:/?#[\]@!$&'()*+,;=/]+/;
 app.post('/signup', celebrate({

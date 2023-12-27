@@ -12,8 +12,8 @@ function PopupEditProfile({ isOpen, onClose, onEditProfile })
   React.useEffect(() =>
   {
     setFormValues({...formValues, 
-      ['description']: currentUser.about, 
-      ['name']: currentUser.name});
+      'description': currentUser.about, 
+      'name': currentUser.name});
   }, [currentUser, isOpen]);
 
   function handleSubmit(e)
