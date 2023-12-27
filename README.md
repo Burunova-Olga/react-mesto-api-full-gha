@@ -7,7 +7,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.68.120
+IP 51.250.68.120
 
 Frontend https://niceplace.students.nomoredomainsmonster.ru
 
