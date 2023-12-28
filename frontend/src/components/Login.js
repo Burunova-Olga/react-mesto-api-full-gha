@@ -7,7 +7,7 @@ function Login ({onSubmit})
   return (
     <>
       <Header>        
-        <NavLink className="header__link link" to="/sign-up">Регистрация</NavLink>
+        <NavLink className="header__link link" to="/signup">Регистрация</NavLink>
       </Header>
       <AuthForm 
         title="Вход" 

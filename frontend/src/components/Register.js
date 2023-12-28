@@ -16,7 +16,7 @@ function Register({onSubmit})
       >
         <div className="welcome__question">
           <p>Уже зарегистрированы?</p>
-          <Link to="/sign-in" className="welcome__link link">Войти</Link>
+          <Link to="/signin" className="welcome__link link">Войти</Link>
         </div>
       </AuthForm>
     </>

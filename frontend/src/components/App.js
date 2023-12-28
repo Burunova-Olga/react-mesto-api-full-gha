@@ -34,7 +34,7 @@ function App()
         console.log(res);
         showPopupInfo(!res.error);
         if (!res.error)
-          navigate('/sign-in', {replace: true}); 
+          navigate('/signin', {replace: true}); 
       })
       .catch((err) => 
       {
@@ -69,7 +69,7 @@ function App()
     localStorage.removeItem('username'); 
     localStorage.removeItem('userInfo');    
     setLogin(false, '');
-    navigate("/sign-in");
+    navigate("/signin");
   }
 
   // Вывести информацию о результате попытки регистрации
@@ -108,8 +108,8 @@ function App()
     <>
       <Routes>
         <Route path="/" element={<ProtectedRouteElement element={Basis} loggedIn={loggedIn} email={userName} signOut={signOut}/>} />
-        <Route path="/sign-up" element={<Register onSubmit={signCreate} />} />
-        <Route path="/sign-in" element={<Login onSubmit={signIn} />} />
+        <Route path="/signup" element={<Register onSubmit={signCreate} />} />
+        <Route path="/signin" element={<Login onSubmit={signIn} />} />
       </Routes>
     
       <PopupInfo
