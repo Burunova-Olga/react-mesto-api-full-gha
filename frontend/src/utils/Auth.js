@@ -26,6 +26,7 @@ class Auth extends BaseApi
       })
       .then((data) =>
       {
+        console.log(data.token);
         if (data.token)
         {
           localStorage.setItem('token', data.token);

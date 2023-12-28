@@ -7,7 +7,7 @@ function Register({onSubmit})
   return (
     <>
       <Header>        
-        <NavLink className="header__link link" to="/sign-in">Войти</NavLink>
+        <NavLink className="header__link link" to="/signin">Войти</NavLink>
       </Header>
       <AuthForm       
         title="Регистрация" 
