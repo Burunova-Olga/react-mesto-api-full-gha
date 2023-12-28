@@ -73,7 +73,7 @@ const api = new Api
     baseUrl: 'http://api.niceplace.students.nomoredomainsmonster.ru',
     headers:
     {
-      authorization: 'e3eda12f-0d31-4fd3-b509-9437a2757934',
+      // authorization: 'e3eda12f-0d31-4fd3-b509-9437a2757934',
       'Content-Type': 'application/json'
     }
   });
