@@ -54,7 +54,8 @@ const auth = new Auth
     baseUrl: 'https://api.niceplace.students.nomoredomainsmonster.ru',
     headers: 
     { 
-      'Content-Type': 'application/json', 
+      authorization: localStorage.getItem('token'),
+      'Content-Type': 'application/json'
     }
   });
 

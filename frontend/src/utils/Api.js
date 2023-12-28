@@ -4,7 +4,16 @@ class Api extends BaseApi
 {
   getInitialCards()
   {
-    return this._request({ method: 'GET', url: "/cards" });
+    return this._request
+    ({ 
+      method: 'GET', 
+      url: "/cards",    
+      headers:
+        {
+          authorization: localStorage.getItem('token'),
+          'Content-Type': 'application/json'
+        }
+    });
   }
 
   addNewCard(name, link)
@@ -17,19 +26,42 @@ class Api extends BaseApi
           ({
             name: name,
             link: link
-          })
+          }),
+        headers:
+          {
+            authorization: localStorage.getItem('token'),
+            'Content-Type': 'application/json'
+          }
       })
   }
 
   changeLike(cardId, isLike)
   {
     const method = isLike ? 'PUT' : 'DELETE';
-    return this._request({ method: method, url: `/cards/${cardId}/likes` });
+    return this._request
+    ({ 
+      method: method, 
+      url: `/cards/${cardId}/likes`,    
+      headers:
+        {
+          authorization: localStorage.getItem('token'),
+          'Content-Type': 'application/json'
+        }
+    });
   }
 
   deleteCard(cardId)
   {
-    return this._request({ method: 'DELETE', url: `/cards/${cardId}` });
+    return this._request
+    ({ 
+      method: 'DELETE', 
+      url: `/cards/${cardId}`,
+      headers:
+        {
+          authorization: localStorage.getItem('token'),
+          'Content-Type': 'application/json'
+        }
+    });
   }
 
   //*********************************************
@@ -37,7 +69,16 @@ class Api extends BaseApi
   //*********************************************
   getUserInfo()
   {
-    return this._request({ method: 'GET', url: "/users/me" });
+    return this._request
+    ({ 
+      method: 'GET', 
+      url: "/users/me",
+      headers:
+        {
+          authorization: localStorage.getItem('token'),
+          'Content-Type': 'application/json'
+        }
+    });
   }
 
   setUserInfo(name, description)
@@ -50,7 +91,12 @@ class Api extends BaseApi
           ({
             name: name,
             about: description
-          })
+          }),          
+        headers:
+          {
+            authorization: localStorage.getItem('token'),
+            'Content-Type': 'application/json'
+          }
       })
   }
 
@@ -63,7 +109,12 @@ class Api extends BaseApi
         body: JSON.stringify
           ({
             avatar: link
-          })
+          }),
+        headers:
+          {
+            authorization: localStorage.getItem('token'),
+            'Content-Type': 'application/json'
+          }
       })
   }
 }
