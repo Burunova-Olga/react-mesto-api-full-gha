@@ -49,6 +49,7 @@ class Auth extends BaseApi
   }
 }
 
+// Спасибо!
 const auth = new Auth
   ({
     baseUrl: 'https://api.niceplace.students.nomoredomainsmonster.ru',

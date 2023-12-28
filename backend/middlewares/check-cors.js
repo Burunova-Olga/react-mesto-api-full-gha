@@ -1,5 +1,11 @@
 // Массив доменов, с которых разрешены кросс-доменные запросы
-const allowedCors = ['http://localhost:3000'];
+const allowedCors = [
+  'https://niceplace.students.nomoredomainsmonster.ru',
+  'http://niceplace.students.nomoredomainsmonster.ru',
+  'https://api.niceplace.students.nomoredomainsmonster.ru',
+  'http://api.niceplace.students.nomoredomainsmonster.ru',
+  'localhost:3000'
+];
 
 module.exports = (req, res, next) => {
   // Сохраняем источник запроса в переменную origin
