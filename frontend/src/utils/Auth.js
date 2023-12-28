@@ -52,7 +52,7 @@ class Auth extends BaseApi
 // Спасибо!
 const auth = new Auth
   ({
-    baseUrl: 'https://api.niceplace.students.nomoredomainsmonster.ru',
+    baseUrl: 'http://localhost:3000',
     headers: 
     { 
       'Content-Type': 'application/json', 
