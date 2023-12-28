@@ -73,7 +73,7 @@ const api = new Api
     baseUrl: 'http://api.niceplace.students.nomoredomainsmonster.ru',
     headers:
     {
-      authorization: localStorage.getItem('jwt'),
+      authorization: localStorage.getItem('token'),
       'Content-Type': 'application/json'
     }
   });
