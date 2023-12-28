@@ -70,7 +70,7 @@ class Api extends BaseApi
 
 const api = new Api
   ({
-    baseUrl: 'http://api.niceplace.students.nomoredomainsmonster.ru',
+    baseUrl: 'https://api.niceplace.students.nomoredomainsmonster.ru',
     headers:
     {
       authorization: localStorage.getItem('token'),
