@@ -7,12 +7,7 @@ class Api extends BaseApi
     return this._request
     ({ 
       method: 'GET', 
-      url: "/cards",    
-      headers:
-        {
-          authorization: localStorage.getItem('token'),
-          'Content-Type': 'application/json'
-        }
+      url: "/cards"
     });
   }
 
@@ -26,12 +21,7 @@ class Api extends BaseApi
           ({
             name: name,
             link: link
-          }),
-        headers:
-          {
-            authorization: localStorage.getItem('token'),
-            'Content-Type': 'application/json'
-          }
+          })
       })
   }
 
@@ -41,12 +31,7 @@ class Api extends BaseApi
     return this._request
     ({ 
       method: method, 
-      url: `/cards/${cardId}/likes`,    
-      headers:
-        {
-          authorization: localStorage.getItem('token'),
-          'Content-Type': 'application/json'
-        }
+      url: `/cards/${cardId}/likes`
     });
   }
 
@@ -55,12 +40,7 @@ class Api extends BaseApi
     return this._request
     ({ 
       method: 'DELETE', 
-      url: `/cards/${cardId}`,
-      headers:
-        {
-          authorization: localStorage.getItem('token'),
-          'Content-Type': 'application/json'
-        }
+      url: `/cards/${cardId}`
     });
   }
 
@@ -72,12 +52,7 @@ class Api extends BaseApi
     return this._request
     ({ 
       method: 'GET', 
-      url: "/users/me",
-      headers:
-        {
-          authorization: localStorage.getItem('token'),
-          'Content-Type': 'application/json'
-        }
+      url: "/users/me"
     });
   }
 
@@ -91,12 +66,7 @@ class Api extends BaseApi
           ({
             name: name,
             about: description
-          }),          
-        headers:
-          {
-            authorization: localStorage.getItem('token'),
-            'Content-Type': 'application/json'
-          }
+          })
       })
   }
 
@@ -109,12 +79,7 @@ class Api extends BaseApi
         body: JSON.stringify
           ({
             avatar: link
-          }),
-        headers:
-          {
-            authorization: localStorage.getItem('token'),
-            'Content-Type': 'application/json'
-          }
+          })
       })
   }
 }
@@ -124,7 +89,7 @@ const api = new Api
     baseUrl: 'https://api.niceplace.students.nomoredomainsmonster.ru',
     headers:
     {
-      authorization: localStorage.getItem('token'),
+      'Authorization': `Bearer ${localStorage.getItem('token')}`,
       'Content-Type': 'application/json'
     }
   });
