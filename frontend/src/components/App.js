@@ -88,7 +88,6 @@ function App()
   // Проверка на авторизованного пользователя
   useEffect(() =>
   {
-    signOut();
     if (localStorage.getItem('token'))
     {
       const token = localStorage.getItem('token');
