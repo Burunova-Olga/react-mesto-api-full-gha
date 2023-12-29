@@ -8,7 +8,12 @@ class Auth extends BaseApi
       ({
         method: 'POST',
         url: "/signup",
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password }),
+        headers:
+          {
+            'Authorization': localStorage.getItem('token'),
+            'Content-Type': 'application/json'
+          }
       })
       .then((res) =>
       {
@@ -22,7 +27,12 @@ class Auth extends BaseApi
       ({
         method: 'POST',
         url: "/signin",
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password }),
+        headers:
+          {
+            'Authorization': localStorage.getItem('token'),
+            'Content-Type': 'application/json'
+          }
       })
       .then((data) =>
       {
@@ -49,14 +59,6 @@ class Auth extends BaseApi
   }
 }
 
-const auth = new Auth
-  ({
-    baseUrl: 'https://api.niceplace.students.nomoredomainsmonster.ru',
-    headers: 
-    { 
-      'Authorization': localStorage.getItem('token'),
-      'Content-Type': 'application/json'
-    }
-  });
+const auth = new Auth('https://api.niceplace.students.nomoredomainsmonster.ru');
 
 export default auth;
