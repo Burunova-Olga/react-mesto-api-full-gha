@@ -102,7 +102,7 @@ function App()
         })
         .catch(console.error);
     }
-  }, [])
+  }, [localStorage.getItem('token')])
 
   return (
     <>
