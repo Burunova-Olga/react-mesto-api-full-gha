@@ -1,4 +1,3 @@
-import card from '../../../backend/models/card';
 import BaseApi from './BaseApi';
 
 class Api extends BaseApi
@@ -10,11 +9,6 @@ class Api extends BaseApi
       method: 'GET',
       url: "/cards",
       moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}`}
-    })
-    .then((cards) =>
-    {
-      const cardsReverse = cards.reverse();
-      return cardsReverse;
     });
   }
 

@@ -37,7 +37,8 @@ function Basis({email, signOut})
       .then(([userData, cardsData]) =>
       {
         setCurrentUser(userData.message);
-        setCards(cardsData);
+        const cardsReverse = cardsData.reverse();
+        setCards(cardsReverse);
       })
       .catch(console.error);
   }, []);
