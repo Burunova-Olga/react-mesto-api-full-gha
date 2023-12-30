@@ -3,11 +3,10 @@ const { celebrate, Joi } = require('celebrate');
 const userController = require('../controllers/users');
 
 router.get('/', userController.readAllUsers);
-router.get('/me', celebrate({
-  params: Joi.object().keys({
-    userId: Joi.string().required().pattern(/^[0-9a-fA-F]{24}$/),
-  }),
-}), userController.readUser);
+router.get('/me', (req, res) => {
+  req.params = { userId: req.user._id };
+  res.redirect(req.user._id);
+});
 
 router.get('/:userId', celebrate({
   params: Joi.object().keys({
