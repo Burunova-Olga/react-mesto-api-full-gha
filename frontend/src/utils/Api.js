@@ -7,7 +7,8 @@ class Api extends BaseApi
     return this._request
     ({
       method: 'GET',
-      url: "/cards"
+      url: "/cards",
+      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}`}
     });
   }
 
@@ -21,7 +22,8 @@ class Api extends BaseApi
         ({
           name: name,
           link: link
-        })
+        }),
+      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
     })
   }
 
@@ -31,7 +33,8 @@ class Api extends BaseApi
     return this._request
     ({
       method: method,
-      url: `/cards/${cardId}/likes`
+      url: `/cards/${cardId}/likes`,
+      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
     });
   }
 
@@ -40,7 +43,8 @@ class Api extends BaseApi
     return this._request
     ({
       method: 'DELETE',
-      url: `/cards/${cardId}`
+      url: `/cards/${cardId}`,
+      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
     });
   }
 
@@ -52,7 +56,8 @@ class Api extends BaseApi
     return this._request
     ({
       method: 'GET',
-      url: "/users/me"
+      url: "/users/me",
+      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
     });
   }
 
@@ -66,7 +71,8 @@ class Api extends BaseApi
         ({
           name: name,
           about: description
-        })
+        }),
+      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
     })
   }
 
@@ -79,7 +85,8 @@ class Api extends BaseApi
       body: JSON.stringify
         ({
           avatar: link
-        })
+        }),        
+      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
     })
   }
 }
@@ -89,8 +96,7 @@ const api = new Api
   baseUrl: 'https://api.niceplace.students.nomoredomainsmonster.ru',  
   headers:
   {
-    'Content-Type': 'application/json',
-    'authorization': `Bearer ${localStorage.getItem('token')}`
+    'Content-Type': 'application/json'
   }
 }); 
 
