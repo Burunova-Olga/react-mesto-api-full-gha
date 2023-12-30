@@ -85,20 +85,6 @@ function readUser(req, res, next) {
     });
 }
 
-function readMe(req, res, next) {
-  return userModel.findById(req.user._id)
-    .then((user) => {
-      if (!user) return next(new NotFoundError('Пользователь не найден'));
-      return res.send({ message: user });
-    })
-    .catch((err) => {
-      if (err.name === 'CastError') return next(new DataError(`Неверные входные данные: ${err.message}`));
-
-      if (err.name === 'ReferenceError') return next(new NotFoundError(`Пользователь не найден: ${err.message}`));
-      return next(new UnknownError(`Неизвестная ошибка: ${err.message}`));
-    });
-}
-
 function updateUser(req, res, next) {
   const { name, about } = req.body;
 
@@ -136,7 +122,6 @@ module.exports = {
   readAllUsers,
   createUser,
   readUser,
-  readMe,
   updateUser,
   updateAvatar,
 };
