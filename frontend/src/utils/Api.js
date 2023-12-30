@@ -8,11 +8,7 @@ class Api extends BaseApi
     ({
       method: 'GET',
       url: "/cards",
-      headers:
-      {
-        'Authorization': localStorage.getItem('token'),
-        'Content-Type': 'application/json'
-      }
+      moreHeader: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
     });
   }
 
@@ -27,11 +23,7 @@ class Api extends BaseApi
           name: name,
           link: link
         }),
-      headers:
-        {
-          'Authorization': localStorage.getItem('token'),
-          'Content-Type': 'application/json'
-        }
+      moreHeader: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
     })
   }
 
@@ -42,11 +34,7 @@ class Api extends BaseApi
     ({
       method: method,
       url: `/cards/${cardId}/likes`,
-      headers:
-        {
-          'Authorization': localStorage.getItem('token'),
-          'Content-Type': 'application/json'
-        }
+      moreHeader: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
     });
   }
 
@@ -56,11 +44,7 @@ class Api extends BaseApi
     ({
       method: 'DELETE',
       url: `/cards/${cardId}`,
-      headers:
-        {
-          'Authorization': localStorage.getItem('token'),
-          'Content-Type': 'application/json'
-        }
+      moreHeader: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
     });
   }
 
@@ -73,11 +57,7 @@ class Api extends BaseApi
     ({
       method: 'GET',
       url: "/users/me",
-      headers:
-        {
-          'Authorization': localStorage.getItem('token'),
-          'Content-Type': 'application/json'
-        }
+      moreHeader: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
     });
   }
 
@@ -92,11 +72,7 @@ class Api extends BaseApi
           name: name,
           about: description
         }),
-      headers:
-        {
-          'Authorization': localStorage.getItem('token'),
-          'Content-Type': 'application/json'
-        }
+      moreHeader: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
     })
   }
 
@@ -109,20 +85,19 @@ class Api extends BaseApi
       body: JSON.stringify
         ({
           avatar: link
-        }),
-      headers:
-        {
-          'Authorization': localStorage.getItem('token'),
-          'Content-Type': 'application/json'
-        }
+        }),        
+      moreHeader: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
     })
   }
 }
 
 const api = new Api 
 ({ 
-
-  baseUrl: 'https://api.niceplace.students.nomoredomainsmonster.ru', 
+  baseUrl: 'https://api.niceplace.students.nomoredomainsmonster.ru',  
+  headers:
+  {
+    'Content-Type': 'application/json'
+  }
 }); 
 
 export default api;
