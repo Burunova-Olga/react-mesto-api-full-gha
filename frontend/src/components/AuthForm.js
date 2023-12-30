@@ -12,6 +12,7 @@ function AuthForm({title, submmitText, onSubmit, children})
     if (!formValues.email || !formValues.password)    
       return;
 
+    console.log(formValues.email);
     onSubmit(formValues.email, formValues.password);    
   }
 
