@@ -2,6 +2,8 @@
 const allowedCors = [
   'https://niceplace.students.nomoredomainsmonster.ru',
   'http://niceplace.students.nomoredomainsmonster.ru',
+  'https://api.niceplace.students.nomoredomainsmonster.ru',
+  'http://api.niceplace.students.nomoredomainsmonster.ru',
   'host:3000'
 ];
 
