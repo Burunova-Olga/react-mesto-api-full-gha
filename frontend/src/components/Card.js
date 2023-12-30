@@ -8,6 +8,8 @@ function Card({ card, onCardClick, onCardDelete, onCardLike })
   const handleLike = () => onCardLike(card);
   const handleDelete = () => onCardDelete(card);
   const isOwn = card.owner === currentUser._id;
+  console.log(card);
+  console.log(card.likes);
   const isLiked = card.likes.some(i => i === String(currentUser._id));
 
   return (
