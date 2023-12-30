@@ -75,7 +75,7 @@ function deleteLike(req, res, next) {
     .then((card) => {
       if (!card) return next(new NotFoundError('Карточка не найдена'));
 
-      return res.send({ message: 'Лайк удалён' });
+      return res.send(card);
     })
     .catch((err) => {
       if (err.name === 'CastError') return next(new DataError(`Неверные входные данные: : ${err.message}`));
