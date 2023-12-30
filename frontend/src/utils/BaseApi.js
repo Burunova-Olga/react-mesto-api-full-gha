@@ -14,8 +14,7 @@ export default class BaseApi
     const header = {...this._headers, ...moreHeader};
 
     let returnPromise;
-    console.log(body);
-    console.log(header);
+    console.log("body:" + body + "  header:" + header + "  url:" + url);
     // Проверка на пустое тело
     if (body == null)
       returnPromise = fetch(this._baseUrl + url,
