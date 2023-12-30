@@ -7,8 +7,7 @@ class Api extends BaseApi
     return this._request
     ({
       method: 'GET',
-      url: "/cards",
-      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}`}
+      url: "/cards"
     });
   }
 
@@ -22,8 +21,7 @@ class Api extends BaseApi
         ({
           name: name,
           link: link
-        }),
-      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
+        })
     })
   }
 
@@ -33,8 +31,7 @@ class Api extends BaseApi
     return this._request
     ({
       method: method,
-      url: `/cards/${cardId}/likes`,
-      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
+      url: `/cards/${cardId}/likes`
     });
   }
 
@@ -43,8 +40,7 @@ class Api extends BaseApi
     return this._request
     ({
       method: 'DELETE',
-      url: `/cards/${cardId}`,
-      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
+      url: `/cards/${cardId}`
     });
   }
 
@@ -56,8 +52,7 @@ class Api extends BaseApi
     return this._request
     ({
       method: 'GET',
-      url: "/users/me",
-      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
+      url: "/users/me"
     });
   }
 
@@ -71,8 +66,7 @@ class Api extends BaseApi
         ({
           name: name,
           about: description
-        }),
-      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
+        })
     })
   }
 
@@ -85,8 +79,7 @@ class Api extends BaseApi
       body: JSON.stringify
         ({
           avatar: link
-        }),        
-      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
+        })
     })
   }
 }
@@ -97,6 +90,7 @@ const api = new Api
   headers:
   {
     'Content-Type': 'application/json',
+    'authorization': `Bearer ${localStorage.getItem('token')}`
   }
 }); 
 
