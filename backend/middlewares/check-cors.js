@@ -2,7 +2,7 @@
 const allowedCors = [
   'https://niceplace.students.nomoredomainsmonster.ru',
   'http://niceplace.students.nomoredomainsmonster.ru',
-  'localhost:3000'
+  'host:3000'
 ];
 
 module.exports = (req, res, next) => {

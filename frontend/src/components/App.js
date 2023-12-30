@@ -50,7 +50,7 @@ function App()
       .then((data) =>
       {
         if (data.token)
-        {
+        {            
           setLogin(true, email);
           navigate('/', {replace: true});
         }
@@ -67,7 +67,6 @@ function App()
   {
     localStorage.removeItem('token');   
     localStorage.removeItem('username'); 
-    localStorage.removeItem('userInfo');    
     setLogin(false, '');
     navigate("/signin");
   }
@@ -102,7 +101,7 @@ function App()
         })
         .catch(console.error);
     }
-  }, [localStorage.getItem('token')])
+  }, [])
 
   return (
     <>

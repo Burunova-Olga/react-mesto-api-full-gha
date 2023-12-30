@@ -15,6 +15,7 @@ export default class BaseApi
 
     let returnPromise;
     console.log(body);
+    console.log(header);
     // Проверка на пустое тело
     if (body == null)
       returnPromise = fetch(this._baseUrl + url,

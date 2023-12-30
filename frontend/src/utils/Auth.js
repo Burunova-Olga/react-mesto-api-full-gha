@@ -43,7 +43,7 @@ class Auth extends BaseApi
       ({
         method: 'GET',
         url: "/users/me",
-        headers: { 'Authorization': `Bearer ${request}` },
+        moreHeader: { 'Authorization': `Bearer ${request}` },
       })
       .then(data => data)
   }
