@@ -59,6 +59,10 @@ class Auth extends BaseApi
   }
 }
 
-const auth = new Auth('https://api.niceplace.students.nomoredomainsmonster.ru');
+const auth = new Auth 
+({ 
+
+  baseUrl: 'https://api.niceplace.students.nomoredomainsmonster.ru', 
+}); 
 
 export default auth;

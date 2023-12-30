@@ -119,6 +119,10 @@ class Api extends BaseApi
   }
 }
 
-const api = new Api('https://api.niceplace.students.nomoredomainsmonster.ru');
+const api = new Api 
+({ 
+
+  baseUrl: 'https://api.niceplace.students.nomoredomainsmonster.ru', 
+}); 
 
 export default api;
