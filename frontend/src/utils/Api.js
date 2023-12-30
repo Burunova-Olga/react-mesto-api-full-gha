@@ -8,7 +8,7 @@ class Api extends BaseApi
     ({
       method: 'GET',
       url: "/cards",
-      moreHeader: { 'Authorization': localStorage.getItem('token') }
+      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}`}
     });
   }
 
@@ -23,7 +23,7 @@ class Api extends BaseApi
           name: name,
           link: link
         }),
-      moreHeader: { 'Authorization': localStorage.getItem('token') }
+      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
     })
   }
 
@@ -34,7 +34,7 @@ class Api extends BaseApi
     ({
       method: method,
       url: `/cards/${cardId}/likes`,
-      moreHeader: { 'Authorization': localStorage.getItem('token') }
+      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
     });
   }
 
@@ -44,7 +44,7 @@ class Api extends BaseApi
     ({
       method: 'DELETE',
       url: `/cards/${cardId}`,
-      moreHeader: { 'Authorization': localStorage.getItem('token') }
+      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
     });
   }
 
@@ -57,7 +57,7 @@ class Api extends BaseApi
     ({
       method: 'GET',
       url: "/users/me",
-      moreHeader: { 'Authorization': localStorage.getItem('token') }
+      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
     });
   }
 
@@ -72,7 +72,7 @@ class Api extends BaseApi
           name: name,
           about: description
         }),
-      moreHeader: { 'Authorization': localStorage.getItem('token') }
+      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
     })
   }
 
@@ -86,7 +86,7 @@ class Api extends BaseApi
         ({
           avatar: link
         }),        
-      moreHeader: { 'Authorization': localStorage.getItem('token') }
+      moreHeader: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
     })
   }
 }
