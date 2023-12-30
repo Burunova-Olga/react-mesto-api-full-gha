@@ -8,7 +8,7 @@ class Api extends BaseApi
     ({
       method: 'GET',
       url: "/cards",
-      moreHeader: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+      moreHeader: { 'Authorization': localStorage.getItem('token') }
     });
   }
 
@@ -23,7 +23,7 @@ class Api extends BaseApi
           name: name,
           link: link
         }),
-      moreHeader: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+      moreHeader: { 'Authorization': localStorage.getItem('token') }
     })
   }
 
@@ -34,7 +34,7 @@ class Api extends BaseApi
     ({
       method: method,
       url: `/cards/${cardId}/likes`,
-      moreHeader: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+      moreHeader: { 'Authorization': localStorage.getItem('token') }
     });
   }
 
@@ -44,7 +44,7 @@ class Api extends BaseApi
     ({
       method: 'DELETE',
       url: `/cards/${cardId}`,
-      moreHeader: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+      moreHeader: { 'Authorization': localStorage.getItem('token') }
     });
   }
 
@@ -57,7 +57,7 @@ class Api extends BaseApi
     ({
       method: 'GET',
       url: "/users/me",
-      moreHeader: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+      moreHeader: { 'Authorization': localStorage.getItem('token') }
     });
   }
 
@@ -72,7 +72,7 @@ class Api extends BaseApi
           name: name,
           about: description
         }),
-      moreHeader: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+      moreHeader: { 'Authorization': localStorage.getItem('token') }
     })
   }
 
@@ -86,7 +86,7 @@ class Api extends BaseApi
         ({
           avatar: link
         }),        
-      moreHeader: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+      moreHeader: { 'Authorization': localStorage.getItem('token') }
     })
   }
 }
@@ -96,7 +96,7 @@ const api = new Api
   baseUrl: 'https://api.niceplace.students.nomoredomainsmonster.ru',  
   headers:
   {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
   }
 }); 
 
