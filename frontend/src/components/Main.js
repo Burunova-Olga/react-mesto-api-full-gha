@@ -5,7 +5,7 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext';
 function Main({ cards, onEditProfileClick, onAddPlaceClick, onEditAvatarClick, onCardClick, onCardDelete, onCardLike })
 {
   const currentUser = React.useContext(CurrentUserContext);
-  cards = cards.reverse();
+  const cardsReverse = cards.reverse();
 
   return (
     <main>
@@ -27,7 +27,7 @@ function Main({ cards, onEditProfileClick, onAddPlaceClick, onEditAvatarClick, o
 
       <section className="elements" aria-label="Место для фотографий">
         {
-          cards.map((item) =>
+          cardsReverse.map((item) =>
           {
             return (<Card
               card={item}
