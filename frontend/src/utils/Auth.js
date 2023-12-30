@@ -8,12 +8,7 @@ class Auth extends BaseApi
       ({
         method: 'POST',
         url: "/signup",
-        body: JSON.stringify({ email, password }),
-        headers:
-          {
-            'Authorization': localStorage.getItem('token'),
-            'Content-Type': 'application/json'
-          }
+        body: JSON.stringify({ email, password })
       })
       .then((res) =>
       {
@@ -27,12 +22,7 @@ class Auth extends BaseApi
       ({
         method: 'POST',
         url: "/signin",
-        body: JSON.stringify({ email, password }),
-        headers:
-          {
-            'Authorization': localStorage.getItem('token'),
-            'Content-Type': 'application/json'
-          }
+        body: JSON.stringify({ email, password })
       })
       .then((data) =>
       {
@@ -53,7 +43,7 @@ class Auth extends BaseApi
       ({
         method: 'GET',
         url: "/users/me",
-        moreHeader: { 'Authorization': `Bearer ${request}` },
+        headers: { 'Authorization': `Bearer ${request}` },
       })
       .then(data => data)
   }
@@ -61,7 +51,6 @@ class Auth extends BaseApi
 
 const auth = new Auth 
 ({ 
-
   baseUrl: 'https://api.niceplace.students.nomoredomainsmonster.ru', 
 }); 
 
