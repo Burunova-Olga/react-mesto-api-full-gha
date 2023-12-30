@@ -5,6 +5,7 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext';
 function Main({ cards, onEditProfileClick, onAddPlaceClick, onEditAvatarClick, onCardClick, onCardDelete, onCardLike })
 {
   const currentUser = React.useContext(CurrentUserContext);
+  cards = cards.reverse();
 
   return (
     <main>
