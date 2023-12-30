@@ -3,10 +3,7 @@ const { celebrate, Joi } = require('celebrate');
 const userController = require('../controllers/users');
 
 router.get('/', userController.readAllUsers);
-router.get('/me', (req, res) => {
-  req.params = { userId: req.user._id };
-  res.redirect(req.user._id);
-});
+router.get('/me', userController.readMe);
 
 router.get('/:userId', celebrate({
   params: Joi.object().keys({
